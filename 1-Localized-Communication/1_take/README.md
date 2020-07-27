@@ -1,3 +1,4 @@
-`npm i`
-
-`node photo.js`
+```
+npm i
+node photo.js
+```
