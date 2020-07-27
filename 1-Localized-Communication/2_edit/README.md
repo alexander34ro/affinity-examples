@@ -1,2 +1,4 @@
-`npm i`
-`node edit.js ../test_picture.jpg`
+```
+npm i
+node edit.js ../test_picture.jpg
+```
