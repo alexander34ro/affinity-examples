@@ -1,2 +1,4 @@
-`npm i`
-`node save.js ../stream`
+```
+npm i
+node save.js ../stream
+```
