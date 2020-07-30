@@ -4,6 +4,7 @@
   "description": "",
   "main": "photo.js",
   "dependencies": {
+    "child_process": "^1.0.2",
     "node-webcam": "^0.6.4"
   },
   "devDependencies": {},
