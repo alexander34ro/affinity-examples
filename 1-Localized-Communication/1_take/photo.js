@@ -2,20 +2,18 @@ const NodeWebcam = require("node-webcam");
 const exec = require("child_process").exec;
 const os = require("os");
 
+const path = "../ test_picture.jpg";
+
 if (require.main === module) {
-  console.log(process.platform);
-  console.log(os.type());
-  console.log(os.release());
-  console.log(os.platform());
   if (os.platform() === "android") {
     exec(
-      "termux-camera-photo -c 1 ../test_picture.jpg",
+      `termux-camera-photo -c 1 ${path}`,
       (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
+        console.log(path);
       }
     );
   } else {
     const Webcam = NodeWebcam.create();
-    Webcam.capture("../test_picture.jpg", function (err, data) { console.log(data); });
+    Webcam.capture(path, function (err, data) { console.log(data); });
   }
 }
