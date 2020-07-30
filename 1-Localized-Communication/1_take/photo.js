@@ -7,7 +7,7 @@ if (require.main === module) {
   console.log(os.type());
   console.log(os.release());
   console.log(os.platform());
-  if (os.type() === "") {
+  if (os.platform() === "android") {
     exec(
       "termux-camera-photo -c 1 ../test_picture.jpg",
       (error, stdout, stderr) => {
