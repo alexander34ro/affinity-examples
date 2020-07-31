@@ -5,7 +5,7 @@ if (require.main === module) {
   const input = process.argv[2];
   const img_path = '4_decoded_image.jpg';
 
-  const data = Base64String.decompressFromUTF16(input);
+  const data = Base64String.decompress(input);
   console.log(data);
   const image = new Buffer(data, 'base64');
   fs.writeFileSync(img_path, image);
