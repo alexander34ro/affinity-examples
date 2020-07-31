@@ -1,0 +1,15 @@
+# Affinity generated CHIML files
+# https://affinity-platform.herokuapp.com/
+
+# This is a complex example of using the Affinity
+# Platform distributed for contextual programming
+# using only Node.js programs and libraries
+
+ins:
+out: output
+do:
+    - do:
+        - node 1_battery/battery.js -> out_0
+        - out_0 -> node 2_json/to_json.js -> out_1
+
+    - ({out_1}) -> {$.util.getInspectedObject} -> output
