@@ -11,5 +11,6 @@ do:
     - do:
         - node 1_battery/battery.js -> out_0
         - out_0 -> node 2_json/to_json.js -> out_1
+        - out_1 -> python 3_device_state/device.py -> out_2
 
-    - ({out_1}) -> {$.util.getInspectedObject} -> output
+    - ({out_2}) -> {$.util.getInspectedObject} -> output
