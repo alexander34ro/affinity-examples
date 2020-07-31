@@ -1,8 +1,9 @@
-const exec = require('child_process').exec;
 const os = require('os');
 
-if (require.main === module) {\
+if (require.main === module) {
   if (os.platform() === 'android') {
+    const exec = require('child_process').exec;
+
     exec(
       'termux-battery-status',
       (error, stdout, stderr) => {
@@ -10,13 +11,10 @@ if (require.main === module) {\
       }
     );
   } else {
-    const batteryLevel = require('battery-level');
-
+    const battery = require("battery");
+ 
     (async () => {
-      console.log(await batteryLevel());
-      //=> 0.55
+        console.log(await battery());
     })();
-    const Webcam = NodeWebcam.create();
-    Webcam.capture(path, function (err, data) { console.log(data); });
   }
 }
