@@ -1,0 +1,15 @@
+# Affinity generated CHIML files
+# https://affinity-platform.herokuapp.com/
+
+ins:
+out: output
+do:
+    - do:
+        - node 1_battery/battery.js -> out_2
+        - out_2 -> node 2_json/to_json.js -> out_3
+        - out_3 -> {$.assignValue} -> out_14
+        - parallel:
+            - out_14 -> {$.print} -> out_16
+            - ('http://localhost:3000', 'affinity_distributed_server.chiml', out_14) -> [$.send] -> received_status
+
+    - ({received_status}) -> {$.util.getInspectedObject} -> output

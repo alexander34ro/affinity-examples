@@ -1,0 +1,9 @@
+
+ins: out_2
+out: output
+do:
+    - do:
+
+        - out_2 -> python 3_device_state/device.py -> battery_context
+
+    - ({battery_context}) -> {$.util.getInspectedObject} -> output

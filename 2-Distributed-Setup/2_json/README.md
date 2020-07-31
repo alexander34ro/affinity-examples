@@ -1,4 +1,3 @@
 ```
-npm i
-node to_json.js
+node to_json.js "{}"
 ```
