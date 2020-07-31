@@ -1,9 +1,7 @@
 # Affinity generated CHIML files
 # https://affinity-platform.herokuapp.com/
 
-# This is a complex example of using the Affinity
-# Platform locally for emotion detection using only 
-# Node.js programs and libraries
+# Similar to the first example but adds streams
 
 ins:
 out: output
@@ -13,6 +11,5 @@ do:
         - out_0 -> node 2_edit/edit.js -> out_1
         - out_1 -> node 3_stream/convert.js -> out_2
         - out_2 -> node 4_save/save.js -> out_3
-        - out_3 -> node 5_fer/index.js info -i -> out_4
 
-    - ({out_4}) -> {$.util.getInspectedObject} -> output
+    - ({out_3}) -> {$.util.getInspectedObject} -> output
