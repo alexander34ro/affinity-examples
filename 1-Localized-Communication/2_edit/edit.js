@@ -7,7 +7,7 @@ if (require.main === module) {
 
   async function main() {
     const image = await Jimp.read(img_input_path);
-    image.resize(32, 32).quality(75).write(img_output_path);
+    image.resize(8, 8).quality(75).write(img_output_path);
     console.log(img_output_path);
   }
 
