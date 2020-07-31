@@ -14,7 +14,9 @@ if (require.main === module) {
     const battery = require("battery");
  
     (async () => {
-        console.log(await battery());
+      const { level, charging } = await battery();
+   
+      console.log(JSON.stringify(await battery()));
     })();
   }
 }
