@@ -5,6 +5,10 @@ if (require.main === module) {
   const simplified = {}
   simplified.level = parsed.level;
   simplified.charging = parsed.charging;
+  if (simplified.level === undefined) {
+    simplified.level = parsed.percentage;
+    simplified.charging = parsed.plugged != "UNPLUGGED";
+  }
 
-  console.log(simplified);
+  console.log(JSON.stringify(simplified));
 }
