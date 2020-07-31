@@ -2,7 +2,7 @@ const NodeWebcam = require("node-webcam");
 const exec = require("child_process").exec;
 const os = require("os");
 
-const path = "../ test_picture.jpg";
+const path = "../test_picture.jpg";
 
 if (require.main === module) {
   if (os.platform() === "android") {
