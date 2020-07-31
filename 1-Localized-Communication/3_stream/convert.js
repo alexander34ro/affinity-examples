@@ -1,4 +1,5 @@
-const fs = require("fs");
+const fs = require('fs');
+const Base64String = require('./Base64String.js');    
 
 if (require.main === module) {
   const input = process.argv[2];
@@ -7,6 +8,8 @@ if (require.main === module) {
 
   const data = fs.readFileSync(img_path);
   const encodedImage = new Buffer(data, 'binary').toString('base64');
-  fs.writeFileSync(stream_path, encodedImage);
-  console.log('"' + encodedImage + '"');
+  fs.writeFileSync(stream_path + '_decompressed', encodedImage);
+  const compressedImage = Base64String.compressToUTF16(encodedImage);
+  fs.writeFileSync(stream_path, compressedImage);
+  console.log('"' + compressedImage + '"');
 }
