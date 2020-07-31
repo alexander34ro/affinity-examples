@@ -2,7 +2,7 @@ ins:
 out: output
 do:
     - do:
-        - node 1_take/photo.js -> out_0
+        - node 1_take/photo.js 1_camera_sample.jpg -> out_0
         - out_0 -> node 2_edit/edit.js -> out_1
         - out_1 -> node 3_stream/convert.js -> out_2
         - out_2 -> node 4_save/save.js -> out_3

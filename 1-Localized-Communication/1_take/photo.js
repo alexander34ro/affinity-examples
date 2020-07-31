@@ -1,11 +1,10 @@
-const NodeWebcam = require("node-webcam");
-const exec = require("child_process").exec;
-const os = require("os");
-
-const path = "../test_picture.jpg";
+const NodeWebcam = require('node-webcam');
+const exec = require('child_process').exec;
+const os = require('os');
 
 if (require.main === module) {
-  if (os.platform() === "android") {
+  const path = '1_camera_sample.jpg';
+  if (os.platform() === 'android') {
     exec(
       `termux-camera-photo -c 1 ${path}`,
       (error, stdout, stderr) => {

@@ -2,12 +2,12 @@ const Jimp = require('jimp');
 
 if (require.main === module) {
   const input = process.argv[2];
-  const img_input_path = input; // test_picture.jpg
-  const img_output_path = '../edited.jpg'; // inverted.png
+  const img_input_path = input; // 1_camera_sample.jpg - in our case
+  const img_output_path = '2_edited.jpg';
 
   async function main() {
     const image = await Jimp.read(img_input_path);
-    image.resize(256, 256).quality(60).write(img_output_path);
+    image.resize(128, 128).quality(70).write(img_output_path);
     console.log(img_output_path);
   }
 
