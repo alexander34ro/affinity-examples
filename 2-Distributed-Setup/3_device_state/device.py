@@ -8,7 +8,7 @@ import time
 def f():
     data = json.loads(sys.argv[1])
     charging = data["charging"]
-    level = data["level"]
+    level = int(data["level"])
     
     status = "CRITICAL"
     if level > 25:
