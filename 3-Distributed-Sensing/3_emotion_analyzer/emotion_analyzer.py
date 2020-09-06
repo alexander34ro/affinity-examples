@@ -7,15 +7,15 @@ import time
 
 def f():
     data = json.loads(sys.argv[1])
-    charging = data["charging"]
-    level = int(data["level"])
+    accelerometer = data["accelerometer"]
+    light = data["light"]
     
     status = "CRITICAL"
-    if level > 25:
+    if light > 25:
       status = "LOW"
-    if level > 50:
+    if light > 50:
       status = "GOOD"
-    if charging:
+    if accelerometer:
       status = "CHARGING"
     return status
 
