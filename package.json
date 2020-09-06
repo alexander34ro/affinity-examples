@@ -1,0 +1,19 @@
+{
+    "name": "affinity_examples",
+    "version": "1.0.0",
+    "description": "",
+    "engines": {
+        "node": "11.x"
+    },
+    "main": "",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "cd ./3-Distributed-Sensing chimera-serve"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chimera-framework": "0.0.94"
+    }
+}
+  
