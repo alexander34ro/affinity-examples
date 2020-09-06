@@ -6,6 +6,10 @@ out: output
 do:
     - do:
         - termux-sensor -a -n 1 -> out_2
-        - ('http://localhost:3000', 'affinity_distributed_2_laptop.chiml', out_2) -> [$.send] -> received_emotional_state
+        - out_2 -> node 2_json/to_json.js -> out_3
+        - out_3 -> {$.assignValue} -> out_14
+        - parallel:
+            - out_14 -> {$.print} -> out_16
+            - ('http://localhost:3000', 'affinity_distributed_server.chiml', out_14) -> [$.send] -> received_emotional_state
 
     - ({received_emotional_state}) -> {$.util.getInspectedObject} -> output
