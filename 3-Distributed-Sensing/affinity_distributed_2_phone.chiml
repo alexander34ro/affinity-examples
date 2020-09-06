@@ -1,0 +1,11 @@
+# Affinity generated CHIML files
+# https://affinity-platform.herokuapp.com/
+
+ins:
+out: output
+do:
+    - do:
+        - termux-sensor -a -n 1 -> out_2
+        - ('http://localhost:3000', 'affinity_distributed_2_laptop.chiml', out_2) -> [$.send] -> received_emotional_state
+
+    - ({received_emotional_state}) -> {$.util.getInspectedObject} -> output
