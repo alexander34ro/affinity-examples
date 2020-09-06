@@ -9,6 +9,6 @@ do:
         - out_3 -> {$.assignValue} -> out_14
         - parallel:
             - out_14 -> {$.print} -> out_16
-            - ('http://8b11dd581a04.ngrok.io', 'affinity_distributed_2_server.chiml', out_14) -> [$.send] -> received_emotional_state
+            - ('https://affinity-examples.herokuapp.com/', 'affinity_distributed_2_server.chiml', out_14) -> [$.send] -> received_emotional_state
 
     - ({received_emotional_state}) -> {$.util.getInspectedObject} -> output
