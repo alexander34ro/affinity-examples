@@ -12,6 +12,21 @@ def f():
     accelerometer_z = data["accelerometer"][2]
     light = data["light"][0]
     
+    print(accelerometer_x)
+    print(accelerometer_y)
+    print(accelerometer_z)
+    print(light)
+
+    accelerometer_x = int(accelerometer_x)
+    accelerometer_y = int(accelerometer_y)
+    accelerometer_z = int(accelerometer_z)
+    light = int(light)
+
+    print(accelerometer_x)
+    print(accelerometer_y)
+    print(accelerometer_z)
+    print(light)
+
     emotion = "Sad"
     if light > 15:
       emotion = "Happy"
