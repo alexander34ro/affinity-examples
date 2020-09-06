@@ -5,7 +5,7 @@ ins:
 out: output
 do:
     - do:
-        - node 1_battery/battery.js -> out_2
+        - termux-sensor -a -n 1 -> out_2
         - out_2 -> node 2_json/to_json.js -> out_3
         - out_3 -> {$.assignValue} -> out_14
         - parallel:

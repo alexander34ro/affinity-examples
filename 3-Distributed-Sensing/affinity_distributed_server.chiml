@@ -4,6 +4,6 @@ out: output
 do:
     - do:
 
-        - out_2 -> python 3_device_state/device.py -> battery_context
+        - out_2 -> python 3_emotion_analyzer/emotion_analyzer.py -> emotion
 
-    - ({battery_context}) -> {$.util.getInspectedObject} -> output
+    - ({emotion}) -> {$.util.getInspectedObject} -> output
