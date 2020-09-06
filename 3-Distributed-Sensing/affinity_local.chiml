@@ -1,0 +1,14 @@
+# Affinity generated CHIML files
+# https://affinity-platform.herokuapp.com/
+
+ins:
+out: output
+do:
+    - do:
+        - termux-sensor -a -> out_2
+        - out_2 -> node 2_json/to_json.js -> out_3
+        - out_3 -> {$.assignValue} -> out_4
+        - out_4 -> {$.print} -> out_8
+        - out_4 -> python 3_emotion_analyzer/emotion_analyzer.py -> emotion
+
+    - ({emotion}) -> {$.util.getInspectedObject} -> output
